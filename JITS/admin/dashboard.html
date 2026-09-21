@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Admin Dashboard | Jangir IT Solution
+    </title>
+
+    <meta name="description" content="Jangir IT Solution Admin Dashboard">
+
+    <link rel="icon" href="../assets/icons/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="dashboard-wrapper">
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="../assets/icons/logo.png" alt="Jangir IT Solution Logo">
+
+                <div>
+
+                    <h2>
+                        Jangir <span>IT</span>
+                    </h2>
+
+                    <small>
+                        Admin Panel
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <p class="nav-title">
+                    MAIN MENU
+                </p>
+
+
+                <a href="dashboard.html" class="nav-link active">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="#leads" class="nav-link">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Leads
+                    </span>
+
+                    <span class="nav-badge" id="sidebarLeadCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-link">
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                    <span>
+                        Projects
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-link">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    <span>
+                        Quotations
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-link">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <p class="nav-title">
+                    MANAGEMENT
+                </p>
+
+
+                <a href="#" class="nav-link">
+
+                    <i class="fa-solid fa-user-group"></i>
+
+                    <span>
+                        Employees
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-link">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button class="logout-btn" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div>
+
+                        <h1>
+                            Dashboard
+                        </h1>
+
+                        <p>
+                            Welcome back,
+                            <strong id="welcomeUsername">
+                                Admin
+                            </strong>
+                            👋
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <button class="icon-btn" id="notificationBtn" title="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+
+                    <div class="admin-profile">
+
+
+                        <div class="admin-avatar">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+
+                        <div class="admin-info">
+
+                            <strong id="adminUsername">
+                                Admin
+                            </strong>
+
+                            <small>
+                                Administrator
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 DASHBOARD CONTENT
+            ================================================== -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADING -->
+
+                <div class="page-heading">
+
+
+                    <div>
+
+                        <span>
+                            OVERVIEW
+                        </span>
+
+                        <h2>
+                            Business Overview
+                        </h2>
+
+                        <p>
+                            Monitor your leads, projects and business activity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="current-date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <span id="currentDate">
+                            Loading...
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     STATS
+                ================================================== -->
+
+                <div class="stats-grid">
+
+
+                    <!-- TOTAL LEADS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div>
+
+                                <p>
+                                    Total Leads
+                                </p>
+
+                                <h3 id="totalLeads">
+                                    0
+                                </h3>
+
+                            </div>
+
+
+                            <div class="stat-icon blue">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-footer">
+
+                            <span class="positive">
+
+                                <i class="fa-solid fa-arrow-up"></i>
+
+                                All
+
+                            </span>
+
+
+                            <span>
+                                Website enquiries
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NEW LEADS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div>
+
+                                <p>
+                                    New Leads
+                                </p>
+
+                                <h3 id="newLeads">
+                                    0
+                                </h3>
+
+                            </div>
+
+
+                            <div class="stat-icon cyan">
+
+                                <i class="fa-solid fa-bolt"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-footer">
+
+                            <span class="positive">
+
+                                <i class="fa-solid fa-circle"></i>
+
+                                New
+
+                            </span>
+
+
+                            <span>
+                                Need attention
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ACTIVE PROJECTS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div>
+
+                                <p>
+                                    Active Projects
+                                </p>
+
+                                <h3 id="activeProjects">
+                                    0
+                                </h3>
+
+                            </div>
+
+
+                            <div class="stat-icon purple">
+
+                                <i class="fa-solid fa-briefcase"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-footer">
+
+                            <span>
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                                Running
+
+                            </span>
+
+
+                            <span>
+                                Current projects
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL CLIENTS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div>
+
+                                <p>
+                                    Total Clients
+                                </p>
+
+                                <h3 id="totalClients">
+                                    0
+                                </h3>
+
+                            </div>
+
+
+                            <div class="stat-icon green">
+
+                                <i class="fa-solid fa-user-check"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-footer">
+
+                            <span class="positive">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Active
+
+                            </span>
+
+
+                            <span>
+                                Converted clients
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LEADS
+                ================================================== -->
+
+                <section class="leads-section" id="leads">
+
+
+                    <div class="section-header">
+
+
+                        <div>
+
+                            <span>
+                                CUSTOMER ENQUIRIES
+                            </span>
+
+                            <h2>
+                                Recent Leads
+                            </h2>
+
+                            <p>
+                                Manage enquiries received from your website.
+                            </p>
+
+                        </div>
+
+
+                        <div class="lead-actions">
+
+                            <!-- SEARCH -->
+                            <div class="lead-search">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input type="text" id="leadSearchInput" placeholder="Search leads..."
+                                    autocomplete="off">
+
+                            </div>
+
+
+                            <!-- STATUS FILTER -->
+                            <div class="lead-filter">
+
+                                <select id="leadStatusFilter">
+
+                                    <option value="ALL">
+                                        All Status
+                                    </option>
+
+                                    <option value="NEW">
+                                        New
+                                    </option>
+
+                                    <option value="CONTACTED">
+                                        Contacted
+                                    </option>
+
+                                    <option value="CONVERTED">
+                                        Converted
+                                    </option>
+
+                                    <option value="PENDING">
+                                        Pending
+                                    </option>
+
+                                    <option value="CANCELLED">
+                                        Cancelled
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- REFRESH -->
+                            <button type="button" class="refresh-btn" id="refreshLeads">
+
+                                <i class="fa-solid fa-rotate"></i>
+
+                                Refresh
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- TABLE -->
+
+                    <div class="table-wrapper">
+
+
+                        <table class="leads-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        Name
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Service
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="leadsTableBody">
+
+
+                                <tr>
+
+                                    <td colspan="8" class="table-loading">
+
+                                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                        Loading leads...
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+                    <!-- ================= LEAD PAGINATION ================= -->
+
+                    <div class="lead-pagination" id="leadPagination">
+
+                        <button type="button" class="pagination-btn" id="prevLeadPage" disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                            Previous
+                        </button>
+
+
+                        <div class="pagination-pages" id="leadPaginationPages">
+                        </div>
+
+
+                        <button type="button" class="pagination-btn" id="nextLeadPage">
+                            Next
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                    <!-- EMPTY STATE -->
+
+                    <div class="empty-state" id="emptyLeads" style="display:none;">
+
+
+                        <div class="empty-icon">
+
+                            <i class="fa-solid fa-inbox"></i>
+
+                        </div>
+
+
+                        <h3>
+                            No Leads Found
+                        </h3>
+
+
+                        <p>
+                            Website enquiries will appear here.
+                        </p>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="dashboard-footer">
+
+
+                <p>
+
+                    © 2026
+
+                    <strong>
+                        Jangir IT Solution
+                    </strong>.
+
+                    All Rights Reserved.
+
+                </p>
+
+
+                <p>
+                    Admin Dashboard
+                </p>
+
+
+            </footer>
+
+
+        </main>
+
+
+
+        <!-- =====================================================
+             LEAD DETAILS MODAL
+             ONLY ONE MODAL
+        ====================================================== -->
+
+        <div class="lead-modal-overlay" id="leadModal">
+
+
+            <div class="lead-modal">
+
+
+                <!-- MODAL HEADER -->
+
+                <div class="lead-modal-header">
+
+
+                    <div>
+
+                        <span>
+                            LEAD INFORMATION
+                        </span>
+
+                        <h2>
+                            Lead Details
+                        </h2>
+
+                    </div>
+
+
+                    <button type="button" class="lead-modal-close" id="closeLeadModal" aria-label="Close">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- MODAL BODY -->
+
+                <div class="lead-modal-body">
+
+
+                    <!-- LEAD INFORMATION -->
+
+                    <div class="lead-info-grid">
+
+
+                        <div class="lead-info-item">
+
+                            <span>
+                                Lead ID
+                            </span>
+
+                            <strong id="modalLeadId">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="lead-info-item">
+
+                            <span>
+                                Name
+                            </span>
+
+                            <strong id="modalLeadName">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="lead-info-item">
+
+                            <span>
+                                Email
+                            </span>
+
+                            <strong id="modalLeadEmail">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="lead-info-item">
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <strong id="modalLeadPhone">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="lead-info-item">
+
+                            <span>
+                                Service
+                            </span>
+
+                            <strong id="modalLeadService">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="lead-info-item">
+
+                            <span>
+                                Date
+                            </span>
+
+                            <strong id="modalLeadDate">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="lead-modal-section">
+
+
+                        <label for="modalLeadStatus">
+                            Lead Status
+                        </label>
+
+
+                        <select id="modalLeadStatus">
+
+                            <option value="NEW">
+                                New
+                            </option>
+
+                            <option value="CONTACTED">
+                                Contacted
+                            </option>
+
+                            <option value="FOLLOW_UP">Follow-up</option>
+
+                            <option value="CONVERTED">
+                                Converted
+                            </option>
+
+                            <option value="CANCELLED">
+                                Cancelled
+                            </option>
+
+                            <option value="PENDING">
+                                Pending
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+
+
+                    <!-- CUSTOMER MESSAGE -->
+
+                    <div class="lead-modal-section">
+
+
+                        <label>
+                            Customer Message
+                        </label>
+
+
+                        <div class="lead-message-box" id="modalLeadMessage">
+                            -
+                        </div>
+                        <!-- FOLLOW-UP -->
+
+                        <div class="lead-modal-section">
+
+                            <label for="modalFollowUpDate">
+                                Follow-up Date & Time
+                            </label>
+
+                            <input type="datetime-local" id="modalFollowUpDate">
+
+                        </div>
+
+
+                        <!-- ADMIN NOTES -->
+
+                        <div class="lead-modal-section">
+
+                            <label for="modalAdminNotes">
+                                Admin Notes
+                            </label>
+
+                            <textarea id="modalAdminNotes" rows="4" placeholder="Enter admin notes..."></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- MODAL FOOTER -->
+
+                <div class="lead-modal-footer">
+
+
+                    <button type="button" class="modal-btn modal-close-btn" id="closeLeadModalBottom">
+
+                        Close
+
+                    </button>
+
+
+                    <button type="button" class="modal-btn modal-delete-btn" id="modalDeleteLead">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete Lead
+
+                    </button>
+
+
+                    <button type="button" class="modal-btn modal-save-btn" id="modalUpdateStatus">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Update Status
+
+                    </button>
+
+                    <button type="button" class="modal-btn modal-save-btn" id="modalSaveFollowUp">
+    <i class="fa-solid fa-calendar-check"></i>
+    Save Follow-up
+</button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- DASHBOARD JAVASCRIPT -->
+
+    <script src="js/dashboard.js"></script>
+
+
+</body>
+
+</html>

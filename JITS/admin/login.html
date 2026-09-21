@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Jangir IT Solution</title>
+
+    <meta name="description" content="Admin Login - Jangir IT Solution">
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/icons/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/login.css">
+
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         LOGIN CONTAINER
+    ================================== -->
+
+    <main class="login-container">
+
+
+        <!-- Logo -->
+
+        <div class="login-logo">
+
+            <img src="../assets/icons/logo.png" alt="Jangir IT Solution Logo">
+
+            <h1>
+                Jangir <span>IT</span> Solution
+            </h1>
+
+            <p>
+                Admin Panel Login
+            </p>
+
+        </div>
+
+
+        <!-- Login Form -->
+
+        <form class="login-form" id="loginForm">
+
+
+            <!-- Username -->
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input type="text" id="username" name="username" placeholder="Enter username"
+                        autocomplete="username" required>
+
+                </div>
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input type="password" id="password" name="password" placeholder="Enter password"
+                        autocomplete="current-password" required>
+
+                    <span class="password-toggle" id="passwordToggle">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Login Button -->
+
+            <button type="submit" class="login-btn" id="loginBtn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </button>
+
+
+            <!-- Message -->
+
+            <div class="login-message" id="loginMessage">
+            </div>
+
+
+        </form>
+
+
+        <!-- Footer -->
+
+        <div class="login-footer">
+
+            <p>
+                © 2026 Jangir IT Solution
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- Login JS -->
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
